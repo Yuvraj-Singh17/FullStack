@@ -1,0 +1,41 @@
+@font-face {
+    font-family: horror;
+    src: url(Shadow\ of\ the\ Deads.ttf);
+}
+@font-face {
+    font-family: pyaara;
+    src: url(NeuMachina.ttf);
+}
+@font-face {
+    font-family: Nothing font;
+    src: url(Ndot-55.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+.first{
+    color: red;
+    background-color: black;
+    font-family: horror ;
+}
+.second{
+    color: red;
+    background-color: black;
+    font-size: 100px;
+    font-family: pyaara;
+    font-weight: bolder;
+}
+.third{
+    color: white;
+    background-color: black;
+    font-family: Nothing font;
+    font-size: 100px;
+    font-weight: 100;
+}
+

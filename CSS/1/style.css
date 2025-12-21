@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    color: red;
+    background-color: royalblue;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    color:blue;
+    background-color: yellow;
+    font-size: 40px;/*Size of fonts , we will give this in px(pixels)*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;/*Type of fonts*/
+    font-weight: 100 ;/*add weights to the fonts*/
+    font-style: italic;/*used to add style to text like italic and etc */
+    text-align: center; /*used to align text*/
+    text-transform: uppercase;
+}
+p{
+    color: aqua;
+    background-color: black;
+    font-size: 50px;
+    font-weight: 900;
+}

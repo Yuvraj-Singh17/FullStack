@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    color: pink;
+    background-color: black;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    text-align: center;
+    font-style: italic;
+}
+#hero{
+    color: aqua;
+    background-color: black;
+}
+
+#new{
+    color: rgb(209, 89, 109);
+    background-color: white;
+}
+.lnct{
+    color: black;
+    background-color: lightseagreen;
+}
