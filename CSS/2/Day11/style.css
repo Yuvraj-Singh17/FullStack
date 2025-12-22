@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#box1{
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to left bottom ,blue,red);
+    margin-bottom: 5px;
+}
+#box2{
+    height: 100px;
+    width: 100px;
+    background: radial-gradient(yellow, red, black);
+    margin-bottom: 5px;
+}
+#box3{
+    height: 100px;
+    width: 100px;
+    background: conic-gradient(red , black , red);
+    margin-bottom: 5px;
+}
+#outer{
+    height: 120px;
+    width: 120px;
+    background-color: aqua;
+}
+#inner{
+    height: 50%;/*It means 50 % of parent height*/
+    width: 50%;/*it means 50 % of parent width*/
+    background-color: black;
+}
+#innermost{
+    height: 40px;
+    width: 40px;
+    background-color: lightseagreen;
+    /*if we use pixels then there will be no effect on child if we change height or width of the parent then there will be no effect on the child*/
+    /*if we give height and width similar in pixels then it will show a perfect square but if we give similar percentage then it will not give perfect square because of size of the pc screen*/
+}
