@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#box{
+    position: relative;
+    height: 400px;
+    width: 400px;
+    background-color: black;
+}
+#innerbox{
+    height: 300px;
+    width: 300px;
+    background-color: aqua;
+}
+#microbox{
+    height: 200px;
+    width: 200px;
+    background-color: crimson;
+}
+#actualbox{
+    position: absolute;
+    left: 80%;
+    height: 40px;
+    width: 40px;
+    background-color: yellow;
+}
