@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+#main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;/* manages position of elements in yaxis */
+  justify-content: center;/*manages positon of elements in xaxis*/
+  gap: 30px;/*creates gap netween child element of a parent element*/
+}
+#first{
+   height: 100px;
+   width: 100px;
+   background-color: crimson;
+}
+#second{
+   height: 100px;
+   width: 100px;
+   background-color: aqua;
+}
+#third{
+   height: 100px;
+   width: 100px;
+   background-color: royalblue;  
+}
