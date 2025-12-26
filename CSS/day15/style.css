@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins',sans-serif;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+
+}
+/* Z INDEX */
+#main #zindex{
+    position: relative;
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(red,black);
+    color: white;
+}
+#zindex #box1{
+    height: 100px;
+    width: 100px;
+    background-color: crimson;
+    position:absolute;
+    left: 40%;
+    z-index: 12;
+}
+#zindex #box2{
+    height: 100px;
+    width: 100px;
+    background-color: lightseagreen;
+    position: absolute;
+    left: 30%;
+    z-index: 11;
+}
+/* TRANSFORM  TRANSLATE */
+#main #transform1{
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(black,aqua);
+    color: white;
+    position: relative;
+}
+#transform1 #box3{
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+    transform: translateX(50%);
+}
+#transform1 #box4{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    transform: translateY(-50%);
+}
+#transform1 #box5{
+    height: 100px;
+    width: 100px;
+    position:absolute;
+    background-color: blueviolet;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+/* CLIP PATH */
+#clipPath{
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(to bottom,blue,red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position:relative;
+}
+#clipPath #box6{
+    height: 200px;
+    width: 200px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: white;
+}
+#clipPath h1{
+    position: absolute;
+    top: 5%;
+    left: 0;
+}
+
+/* FLEX DIRECTION */
+#direction h1{
+    position: absolute;
+    color: white;
+}
+#direction{
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(skyblue,lightgreen);
+    display: flex;
+}
+#direction .card{
+    margin:50px 25px;
+    height: 300px;
+    width: 200px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 20px black;
+    position: relative;
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+}
+#direction .card img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+#direction .card h1{
+    font-size: 20px;
+}
+#direction .card button{
+    color: rgb(67, 197, 241);
+    border: 2px solid rgb(67, 197, 241);
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+#direction .card p{
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+ #direction .card .bottom{
+    height: 40%;
+    width: 100%;
+    background: black;
+    position:absolute;
+    bottom:-40%;
+
+    transition: all ease 0.4s;
+} 
+
+#direction .card .bottom button{
+    position: absolute;
+    top: 55%;
+    left: 28%;
+    align-items: center;
+}
+#direction .card button:hover{
+    background-color: rgb(67, 197, 241);
+    color: white;
+    cursor: pointer;
+}
+#direction .card:hover .bottom{
+    bottom: 0%;
+    background: linear-gradient(transparent,black);
+}
+
+#main #transform2{
+    height: 50%;
+    width: 50%;
+    background: linear-gradient(pink,rgb(233, 85, 85));
+    perspective: 100px;
+    position: relative;
+    color: white;
+}
+#main #transform2 #first{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    transform: rotateX(10deg);
+}
+
+#main #transform2 #second{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: rotateY(10deg);
+}
