@@ -1,3 +1,7 @@
+# JavaScript
+
+it is used to add interation engagement animations and validations in a website
+
 # Words vs Keywords
 
 keywords are the words that are predefined 
@@ -43,8 +47,13 @@ future mein kabhi bhi kisi bhi container ki value ko access kar sakte hai
 
 - declare means like we only declare a element without giving its value to it like `let a;` or `var a;`
 - initialization means we also give value to it like `let a = 12;` or `var a = 20` or `const a = 30;`;
+- we will use let always because it has new features an more features then const
 
+- error dushman nhi hai dushman hai ek aisa code jo error naa de galat hone par bhi woh dushman hai
+
+- hum hamesha let use karenge.
 ### Var
+
 - jabhi element var se bana ho toh woh ek window mein add karta hai 
 - function scoped hota hai var
 - agar same variable ko firse declare karein toh error nhi aayega
@@ -63,6 +72,17 @@ future mein kabhi bhi kisi bhi container ki value ko access kar sakte hai
 
 - we cannot change value of these varibles
 
+- const kaha use hoga - Jaise humne kisi cheez par discount lagaya aur fir hum usey hatana nnhi chahte iss condition mein const use hota hai.
+
+# for printing
+
+- console.log();
+- console.info();
+
+- dono hi same hai
+- kuchh kuchh browser bas console.info ko thode alg tareeke se show karte hai unke aage ek i sign aajata hai
+
+- console.table({name:"harsh"});// this will create a table.
 
 # Scope (Functional , Block , Global)
 
@@ -174,9 +194,10 @@ person = {}; // Not allowed ❌
 
 - '' - single quotes
 - "" - double quotes
-- `` - backtick
+- `` - backtick(these are called template-strings)
+- agar koi number likha ho aur uske saath koi bhi special character likh do toh woh ek string ban jaata hai. (1234a)
 
-- wrapped data between sigle quotes , double quotes or backtick is called strings.
+- wrapped data between single quotes , double quotes or backtick is called strings.
 
 ## Number
 
@@ -190,6 +211,8 @@ Writing true or False is boolean
 ## Null 
 
 - null ka matlab hai aapne jaan boojh kar koi value nhi di
+- jab aapke pass koi value na ho dene ke liye
+
 
 ## Undefined
 
@@ -274,7 +297,7 @@ Writing true or False is boolean
 
 - for checking that a value is falsy or truthy just put 2 exclamation marks in front of it  `!!0 // false`
 
-- -1 is alsoa truthy value
+- -1 is also truthy value
 - apart from these values all are truthy values
 
 
@@ -847,3 +870,539 @@ woh arrays and objects mein lage toh woh spread operators hote hai
             let ans = name(); // ans = 12;
             console.log(ans);//12
             ```
+
+## First class function
+
+- aise functions jinko value ki tarah treat karte hai
+
+- example :
+     ```
+    function abcd(val){
+      val();
+    } 
+    abcd(function(){
+        console.log("Hey!!");
+    })
+    ```
+
+
+
+## Higher Order Functions
+
+- aise function jo return kare ek function ya fir return kare ek function apne parameter mein
+- ya fir dono kare return aur accept.
+
+- Example1 : ```
+            function abcd(val){
+
+            }
+            abcd(function(){
+                console.log("Hey")
+            })
+            ```
+
+            - here function abcd is higher order function because it is accepting a function as a parameter.
+- Example2 : ```
+              function abcd(){
+                  return function(){
+                      console.log("Hey!!")
+                  }
+              }
+              abcd()()
+              ```
+
+              - in this case it is returning a function.
+
+## Pure vs Impure functions
+
+- aisa function jo bahar ki value na badle woh hai pure function
+
+- example :```
+            let a = 12;
+            function abcd(){
+              console.log("Hey!!");
+            }
+            ```
+
+- aisa function jo ki baahar ki value ko badal de wo hai impure function
+
+- example :```
+            let a = 12;
+            function abcd(){
+              a++;
+            }
+            ```
+
+## Closures 
+
+- ek function jo return kare ek aur function aur return hone wala function humesha use karega parent function ka koi variable
+
+- example :```
+            function abcd(){
+              let a = 12;
+              return function(){
+                console.log(a);
+              }
+            }
+            ```
+
+## Lexical Scoping
+
+
+- example :```
+            function abcd(){
+              let a = 12;
+              function defg(){
+                let b = 13;
+                function ghij(){
+                  let c = 14;
+                }
+              }
+            }
+            ```
+- from the above example , a can be used in the whole function abcd but not outside abcd anywhere and b can used in the whole function defg and similarly c can be used inside ghij function.
+
+## IIFE (Immediately invoked function expressions)
+
+- example :```
+            (function(){
+
+            })()
+            ```
+- bas yeh hai ife bas ek function banao aur use pack kar do round bracket se aur turant hi call marrdo.
+- yeh function turant chalega bina call kiye
+
+## hoisting differnces betweeen declaration and expression
+
+- isme yeh hota hai jaise humne koi function statement banaye 9 line pe aur call kiya 1 line pe toh woh run ho jaayega 
+
+- example :```
+            abcd();
+
+
+
+            function abcd(){
+              console.log("Hey!!");
+            }
+            ```
+- par agar hum iss function declare kare as a function expression then it will not work. 
+
+- example :```
+            abcd();
+            
+            let abcd = function(){
+              console.log("Hey!!");
+            }
+            ```
+
+            - this function will give error.
+  
+
+# Questions :
+
+## Questions 1 : What is the difference between function declaration  and expression in terms of hoisting ?
+- agar aap function statements likh rhje hai toh use aap jahan par aapne create kiya hai usse upar access kar sakte ho 
+- aur agar aap function expressions likh rhe hai toh aapko pehle usse likhna padega agar aapne ne jaha function likha hai usse pehle call kiya toh error aayega
+
+## Convert a function to arrow function 
+
+- Answer :```
+            let abcd = function(a,b)=>{
+              return(a*b);
+            }
+      
+      ```
+
+## what is parameter and what is argument in a function?
+
+- jo hum function mein pass karte hai woh parameter aur jo hum call karte waqt pass karte hai woh argument
+
+## What does the ... operator mean in parameter ?
+
+- this operatior is also called rest operator.
+
+- example :```
+            function abcd(...val){
+              console.log(val);//array
+            }
+            abcd(1,2,3,4,5,6,67);
+            ```
+            - yeh saari value array mein chali jaayegi aur val aapka ek array hoga
+
+## aisa function jo kuch return nhi kar rha toh woh kya print karega ?
+
+- undefined
+
+
+## What does it mean when we say "functions are first class citizens"?
+
+- isme functionns treat kiye jaate hai values ke jaise .
+
+## What is a higher order function ? 
+
+- aisa function jo return kare ek function ya fir uske parameter mein ek function acept ho toh woh higher order function hote hai.
+
+## what is closure
+
+- ek aisa function jo return kare ek aur function aur andar wala function bahar wali value ko use kare kaise bhi chahe print hi kyu na kara rhe ho.
+
+## What is the use of IIFE ? Name one real-world use case.
+
+- IIFE (Immediately Invoked Function Expression) ka use hota hai code ko turant execute karne aur variables ko global scope se safe rakhne ke liye.
+
+Real-life example:
+Jaise exam hall me rough work sheet—kaam khatam, sheet discard; waise hi IIFE temporary logic run karke clean ho jata hai.  
+
+
+# Practice
+
+## BMI Calculator
+
+- example :```
+            function bmi(weight , height){
+              return weight / (height * height);
+            }
+            console.log(bmi(76 , 1.8).tofixed(2));
+            ```
+- toFixed point ke baad kitni vlaue chahiye uske liye hai
+
+## Create reusable discount calculator (HOF)
+
+- example :```
+            function discountCalculator(){
+              return function(){
+                return price - price(discount/100);
+              }
+            }
+            let ten = discountCalculator(10);
+            let twenty = discountCalculator(20);
+
+            console.log(ten(1200));
+            console.log(twenty(1200));
+            ```
+
+
+# Arrays
+
+- in javascript arrays can hold values of different type.
+
+- let arr = [1,2,3,4,5,6];
+
+- if we try arr[50] --> it will give undefined because it does not exist.
+
+- indexing in array starts from 0;
+
+- let arr = new Array(); // can also be created like this
+
+- Modification : arr[4] = 100;//this will update array element..
+
+## Methods in array
+
+### Push 
+- add a new value in the array  at lasst
+- example : arr.push(100);[1,2,3,4,5,6,100]
+
+### Pop
+- to remove a element from the last
+- example : arr.pop()//[1,2,3,4,5]
+
+### Shift
+- yeh shuru se value hata deta hai
+- example : arr.shfit(); // [2,3,4,5,6]
+
+### Unshift
+
+- yeh shuruat mein ek value add karta hai
+- example : arr.unshift(0);//[0,1,2,3,4,5,6]
+
+### Splice
+
+- aap kahi se koi bhi value hata sakte ho kahi beech mein se bhi
+- arr.splice(from_where_you_want_to_remove_element , how much value you want to remove)
+
+- example : arr.splice(2,1);//[1,2,4,5,6]//3 removed
+
+- yeh actual array mein changes karta hai
+
+### Slice 
+
+- ek portion of the array nikaal ke deta hai jo ki copy hoga uss part ka jo hume chahiye bina main array mein change kiye
+
+- ar.slice(starting_inde  , ending_index);//here ending index is excluded
+- example : arr.slice(0,4);//[1,2,3,4]
+
+### Reverse
+
+- reverses a array
+- example : arr.reverse();
+- yeh copy nhi banata main array hi chnage karta hai
+
+### Sort
+
+- sort function se hum log ya toh ascending order ya fir descending order mein arrange karega
+
+- sort chalane ke liye ek function ki jaruruat padegi
+
+- (a-b) karne se ascending order mein arrange ho jayega
+
+- (b-a) karne se descending order mein arrange ho jayega 
+
+## For-Each
+ 
+- forEach har element par jata hai.
+
+- foreach ,map, filter ya reduce lagaoge toh inn sab mein ek cheez common hai , yeh sab ek function accept karte hai jaise sort function karta tha. 
+
+- example : ```
+          arr.forEach(function(val){
+              console.log(val); // this will print all element of array.
+          })
+            ```
+
+## Map
+
+- map sirf tab use karna hai jab aapko ek naya array banana hai pichhle array ke basis par
+
+- map dikhte hi saath mann mein ek blank array bana liya karo
+- example : ```
+          let newarr = arr.map(function(val){
+              return 12; // [12,12,12,12,12]
+          })
+            ```
+- if we wil not return anything then it will return new array of same length full of undefined.
+
+- jab bhi aapko koi case dukh jaaye jaha par ek aray se naya array banega and woh naya array kuch values ko rakhega.
+
+
+## Filter
+
+- isme jaha bhi hum return karenge wahi value new array mein aayegi.
+
+- example : ```
+          let arr = [1,23,4,5,6,7]
+          let newarr = arr.filter(function(val){
+              if(val > 4) return true; // [23,5,6,7]
+          })
+            ```
+- map dikhte hi saath mann mein ek blank array bana liya karo
+
+
+## Reduce
+
+- ek array se ek value banana
+
+- example : ```
+          arr.reduce(function(accumulator , val){
+              return accumulator+val
+          },0);
+            ```// it will give sum of the array.
+
+- in the upper code "0" at the end reflects the value of accumulator
+- accumulator kaise kaam karta hai? -> jaise pehle accumulator ki value 0 hai fir (suppose arr = [1,2,3,4,5,6]) arr ki pehle value aayi accumulator + val hojayegi ab accumulator mein value gyi 1 aur val ki value 2 ho gyi ab similarly ab yeh aise hi aage kaam karega. --> it is working like a variable that holds the sum of a array(but accumulator aur bhi jagah use ho sakta hai). 
+
+## Find
+
+- example : ```
+          arr.find(function(val){
+              return val === 1; // 1
+          }) // yeh jab 1 return karega agar array mein present hoga
+            ```
+- agar value array mein milegi toh yeh wahi return kar dega
+- aur agar ek se jyada value hoga toh yeh pehli wali value return karegi.(jaha pehli baar mil rha ho)
+
+## some
+
+- example : ```
+          let arr = [1,2,3,4,5]
+          let any = arr.some(function(val){
+              return val > 4; // true
+          })
+            ```
+- agar puri array mein ek bhi value given condition ke according hogi toh yeh method true print kar dega.
+
+## Every
+
+- it will check agar saare element usss condition ko follow kar rhe hai toh true nhi toh false.
+- example : ```
+          let arr = [10,20,30,4];
+          arr.every(function(val){ 
+                return val>5;//false
+          })
+ 
+           ```
+- it will give true , when condition === val > 1.
+
+## Destructuring
+
+- Destructuring of an array -> Extracting a new array using old array by assigning array to variables inside square bracket
+
+- example : ```
+          let arr = [1,2,3,4,5];
+          let [a,b,,c] = arr;// [1,2](a = 1 , b = 2 , c = 4)
+            ```
+
+## Spread Operator
+
+- old array ki saari values uthao aur nayi array mein bikher do
+- example : ```
+          let arr = [1,2,3,4,5];
+          let arr2 = [...arr];
+            ```
+- isse naya array ban jaayega (matlab copy ssamajh lo par iss baar reference copy nhi hoga).
+
+# Questions related to Array
+
+## What is the difference between .push() and .unshift()?
+- push add element from the left and unshift adds the element from the right.
+
+## splice use to add ?
+ let arr = ["Green" , "Yellow"];
+ arr.splice(1,0,"Red","Blue");
+ -> [Green , Red , Blue , Yellow]
+
+## Alphabetically sort array?
+
+- arr.sort();//it will sort without any function
+
+## merge two arrays
+
+let a = [1,2,3];
+let b = [4,5,6];
+
+let c = [...a , ...b]; // [1,2,3,4,5,6]
+
+## Splice slice 
+
+- splice value hata deta hai(yeh original array pe kaam karta hai) aur slice values ko extract kar ke deta hai(yeh array ka copy deta hai).
+
+## ForEach vs Map
+
+- Map return karta hai foreach return nhi karta
+- agar nyi array banani hai toh map ka istemaal karenge.
+
+
+# Objects
+
+- object hum jab banate hai jab hume ek entity ke baare mein sab janna chahte hai .
+
+- ek bande ki baat karte hai isme .
+
+- let obj = {
+  name:"vishu",
+  age:21,
+  khaana:"daal chaawal",
+};
+
+- obj.age or obj[age]--> age access kar paate hai
+- obj.name or obj[name] --> name access kar paate hai
+- obj.khaana or obj[khaana]--> khaana access kar sakte hai
+
+- . notation se hum uss value ko dhundte hai jo object mein present ho aur obj[key] is se hum kisi bhi value se data get kar sakte hai
+
+- obj[value] Example : 
+                      ```
+                      let obj = {
+                        name: "harsh",
+                        age:26,
+                        khaana:"Daal chawal",
+                      };
+                      let aa = "name";
+                      console.log(obj[aa]);//harsh
+                      ```
+
+- it is a key-value structure.
+
+## Nesting and Deep Access
+
+- nesting ek ke andar ek.
+- Example : 
+            ```
+            const user = {
+              name:"Harsh",
+              address:{
+                city:"bhopal",
+                pin:462001,
+                location:{
+                  lat: 23.2,
+                  lng: 77.4,
+                },
+              },
+            };
+            //Method 1
+            user.address.location.lng;(for accessing ln location)
+            // Method 2
+            let {lng , lat} = user.address.location//(this is destructuring)
+            ```
+- iss mein jab bhi error aayega toh jisme error dikha rha hai usse ek pehle mein error hoga , chalo upar waale example ko leke samjhte hai --> user.address.locations.lng; (isme maine location ki jagah locations likh diya hai) yeh error dega lng mein toh hume location wale ko check karna hoga.
+
+## For In
+
+- it is used to iterate over objects.
+
+- ```
+  let obj = {
+    name:"harsh",
+    age:26,
+    email"test@test.com",
+  };
+
+  for(let key in obj){
+    console.log(key , object[key]);
+  }
+  ```
+- Output:
+```
+name harsh
+age 26
+
+```
+
+## Object.keys
+
+- object.keys --> array ki saari keys ko ek array mein daal deta hai
+
+## Object.entries
+
+- it makes arrays of arrays.
+
+## Spread operator in obj
+
+- it is used to copy objects.
+
+## Assign operator
+
+- it is also used to copy objects
+
+- 
+```
+  let obj = {
+    name:"harsh",
+    age:26,
+    email"test@test.com",
+  };
+
+  let obj2 = object.assign({price: Infinity} , obj);
+```
+- iss code se naya object ban jaayega jisme ek nya key value pair hoga price:infinity.
+
+## Deep Clone
+
+- jab hum nested objects ki copy karte hai sirf top level va;ues are real baaki sab firse reference pass karne lagti hai 
+
+- isko fix karne ke liye hum use karte hai 
+ JSON.stringify(Objectname); // isse object string mein convert ho jata hai
+- aur agar iss string ko firse object banana ho toh 
+JSON.parse() kardete hai
+
+## Optional Chaining & computed properties
+
+- obj?address?.city
+- optional chaining karne se agar jaise koi property nhi hai toh woh error de dega but optional chaining karne se woh error nhi aayega agar value nhi hai toh undfined de dega.
+- Jab deep object ke andar value ho bhi sakti hai ya nahi bhi, aur error se bachna ho.
+
+- Jab object ke key ka naam dynamic ho (variable se aaye), tab computed properties use hoti hain.
+
+## Deepcopy vs shallowcopy
+
+Shallow copy sirf first level copy karta hai (nested object ka reference same rehta hai),
+Deep copy poora object including nested objects ka separate copy banata hai.
