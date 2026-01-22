@@ -1,7 +1,14 @@
 # JavaScript
 
-it is used to add interation engagement animations and validations in a website
+- it is used to add interation engagement animations and validations in a website
+- JavaScript is the brain/muscles - it makes the webpage think, react, and move (handle clicks, animations, logic).
 
+- Question : write one example js is being used like popup or animation
+- Example: When you click a button and a popup alert appears, JavaScript is being used to handle that action.
+
+- `<script defer src="script.js"></script>`
+
+1. Defer loads script.js without blocking HTML parsing and runs it after the HTML is fully loaded, in the same order it appears.
 # Words vs Keywords
 
 keywords are the words that are predefined 
@@ -20,7 +27,102 @@ above words are all keywords
 
 above words are not keywords these are words
 
+# Prompt 
 
+- Prompt se jo bhi input loge woh ek String ban jaayega
+
+
+# Converting String from prompt() to Number in JavaScript
+
+- By default, prompt() always returns a string.
+- So we must explicitly convert it to a number.
+
+- Example input:
+
+- let value = prompt("Enter a number");
+
+1. Number() ✅ (Most Recommended)
+let num = Number(prompt("Enter a number"));
+
+
+Converts the entire string to a number
+
+Returns NaN if conversion fails
+
+Example:
+
+Number("123")   // 123
+Number("12.5")  // 12.5
+Number("abc")   // NaN
+
+2. Unary Plus (+) Operator ⚡ (Shortest)
+let num = +prompt("Enter a number");
+
+
+Fast and clean
+
+Works same as Number()
+
+Example:
+
++"10"    // 10
++"3.14"  // 3.14
+
+3. parseInt() (For Integers Only)
+let num = parseInt(prompt("Enter a number"));
+
+
+Converts to integer
+
+Stops at first non-numeric character
+
+Example:
+
+parseInt("123")     // 123
+parseInt("12.9")    // 12
+parseInt("10px")    // 10
+
+
+⚠️ Not good for decimals
+
+4. parseFloat() (For Decimal Numbers)
+let num = parseFloat(prompt("Enter a number"));
+
+
+Converts to floating-point number
+
+Allows decimals
+
+Example:
+
+parseFloat("12.5")   // 12.5
+parseFloat("10.3px") // 10.3
+
+5. Math.floor() / Math.ceil() / Math.round()
+
+Used after converting to number:
+
+let num = Math.floor(Number(prompt("Enter a number")));
+
+
+Examples:
+
+Math.floor(4.7) // 4
+Math.ceil(4.2)  // 5
+Math.round(4.5) // 5
+
+6. Using * 1 (Implicit Conversion)
+let num = prompt("Enter a number") * 1;
+
+
+JavaScript automatically converts string to number
+
+Example:
+
+"10" * 1  // 10
+
+
+⚠️ Less readable, not recommended in interviews
 # Variables and Declaration
 
 
@@ -73,6 +175,16 @@ future mein kabhi bhi kisi bhi container ki value ko access kar sakte hai
 - we cannot change value of these varibles
 
 - const kaha use hoga - Jaise humne kisi cheez par discount lagaya aur fir hum usey hatana nnhi chahte iss condition mein const use hota hai.
+
+- Question : write three examples where const is useful(like PI , baseURL , etc)
+
+- Three common places where const is useful:
+
+1. PI value – const PI = 3.14159 (never changes)
+
+2. Base API URL – const BASE_URL = "https://api.example.com"
+
+3. App configuration values – like const MAX_USERS = 100 (fixed limit)
 
 # for printing
 
@@ -190,6 +302,8 @@ person = {}; // Not allowed ❌
 
 # Primitives
 
+- inko hum direct copy kar sakte hai
+
 ## Strings
 
 - '' - single quotes
@@ -213,6 +327,11 @@ Writing true or False is boolean
 - null ka matlab hai aapne jaan boojh kar koi value nhi di
 - jab aapke pass koi value na ho dene ke liye
 
+## NaN
+- Koi number ke saath aisa operation kiya jo ho nahi sakta to NaN hi milta hai
+- 0/0 - NaN
+- undefined + 1 -> NaN
+- Number("abc") -> NaN
 
 ## Undefined
 
@@ -241,9 +360,16 @@ Writing true or False is boolean
 ##### Creation of bigint
 ` let a = 56149867697967678687687n`
 
-# Reference Datatype
+## Infinity
+
+- when we divide any number by 0 it gives infinity.
+- but there is no usecase of infinity.
+- 1/0 -> infinity
+
+# Reference Datatype(or Relative Datatype)
 
 - agar kahi par bhi bracket dikh gya toh samajh jao woh reference hai 
+- inko hum direct copy nhi kar sakte
 
 
 # dynamic typing
