@@ -17,5 +17,6 @@ body{
 }
 p{
     color: rgb(9, 204, 9);
+    font-family: monospace;
     font-size: 2rem;
 }
